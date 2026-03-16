@@ -57,7 +57,7 @@ jobs:
           mkdir -p data logs reports
       
       - name: 执行股票分析
-            env:
+          env:
           PUSH_CHANNEL: 'dingtalk'
           DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
           STOCK_LIST: ${{ secrets.STOCK_LIST }}
