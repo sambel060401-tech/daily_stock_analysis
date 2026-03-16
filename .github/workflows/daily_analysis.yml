@@ -57,12 +57,13 @@ jobs:
           mkdir -p data logs reports
       
       - name: 执行股票分析
-        env:
-          PUSH_CHANNEL: 'dingtalk'
-          DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
-          STOCK_LIST: ${{ secrets.STOCK_LIST }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+    env:
+      PUSH_CHANNEL: 'dingtalk'
+      DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
+      STOCK_LIST: ${{ secrets.STOCK_LIST }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+
 
           # Gemini AI（主选）
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
