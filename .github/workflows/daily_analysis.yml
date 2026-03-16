@@ -57,21 +57,13 @@ jobs:
           mkdir -p data logs reports
       
       - name: 执行股票分析
-        env:
-          # ==========================================
-          # AI 配置
-          # ==========================================
-          # LITELLM_CONFIG
-        # 推送通道设置（手动强制开启）
-        PUSH_CHANNEL: 'dingtalk'
-        DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
-        
-        # 股票列表（强制使用你的 Secret）
-        STOCK_LIST: ${{ secrets.STOCK_LIST }}
+            env:
+          PUSH_CHANNEL: 'dingtalk'
+          DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
+          STOCK_LIST: ${{ secrets.STOCK_LIST }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
 
-        # AI 配置（确保这些变量名和你的 Secrets 一致）
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
           # Gemini AI（主选）
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL || secrets.GEMINI_MODEL || 'gemini-3-flash-preview' }}
